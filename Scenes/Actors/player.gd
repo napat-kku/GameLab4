@@ -132,6 +132,9 @@ func death_tween():
 	respawn_tween()
 
 func respawn_tween():
+	# เพิ่มบรรทัดนี้ เพื่อเติมเลือดให้กลับมาเต็ม 100 เมื่อตัวละครเกิดใหม่
+	GameManager.hp = 100 
+	
 	var tween = create_tween()
 	tween.stop(); tween.play()
 	tween.tween_property(self, "scale", Vector2.ONE, 0.15) 
