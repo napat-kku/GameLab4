@@ -1,3 +1,16 @@
+ชื่อ นายณภัตร ช้อยกิ่ง รหัสนักศึกษา 663380262-3
+
+## Game Story 
+- มีเด็กชายกางเกงขาสั้น หลุดเข้าไปในโลกที่มีแต่ Monsters และกับดัก เขาต้องผ่านเข้าประตูไปเรื่อยๆ เพื่อหาทางรอดชีวิต
+
+## Link Clip Demo VDO
+
+## Link Play Game
+
+## Preview
+<img src="docs/demo1.png" width="450">
+<img src="docs/demo2.png" width="450">
+
 # 2D Platformer Starter Kit
 
 This starter kit provides all the essential mechanics needed to build a complete 2D platformer game in Godot 4.7. It is designed as a hands-on learning resource for students taking the **Computer Game Development** course at the **College of Computing, Khon Kaen University**.
