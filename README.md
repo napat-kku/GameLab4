@@ -1,7 +1,7 @@
 ชื่อ นายณภัตร ช้อยกิ่ง รหัสนักศึกษา 663380262-3
 
-<img src="docs/demo1.jpg" width="300">
-<img src="docs/demo2.jpg" width="300">
+<img src="docs/demo1.png" width="300">
+<img src="docs/demo2.png" width="300">
 
 # 2D Platformer Starter Kit
 
