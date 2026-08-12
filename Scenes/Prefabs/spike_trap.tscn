@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://br7lrxr31c7uv"]
+
+[ext_resource type="Texture2D" uid="uid://6q1ne1bq14g3" path="res://Assets/Spike_B.png" id="1_bl2tp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bsss"]
+size = Vector2(66, 19.5)
+
+[sub_resource type="Animation" id="Animation_ge2ro"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_flehy"]
+resource_name = "thrust"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335, 0.26666668, 0.6, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 0, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.08, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fj6kk"]
+_data = {
+&"RESET": SubResource("Animation_ge2ro"),
+&"thrust": SubResource("Animation_flehy")
+}
+
+[node name="SpikeTrap" type="StaticBody2D" unique_id=1181447162 groups=["Traps"]]
+collision_layer = 9
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2005096592]
+position = Vector2(0, -5.9604645e-08)
+scale = Vector2(2.074609, 2.3300784)
+texture = ExtResource("1_bl2tp")
+hframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=768177753]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_4bsss")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1468048176]
+libraries/ = SubResource("AnimationLibrary_fj6kk")
+autoplay = &"thrust"

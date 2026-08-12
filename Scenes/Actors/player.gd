@@ -9,7 +9,7 @@ signal hit_trap
 
 @export_category("Player Properties") # You can tweak these changes according to your likings
 @export var move_speed : float = 300
-@export var jump_force : float = 650
+@export var jump_force : float = 670
 @export var gravity : float = 30
 @export var max_jump_count : int = 2
 @export var bullet_scene : PackedScene
@@ -28,8 +28,8 @@ var is_attacking = false
 var shoot_cooldown_timer = 0.0
 var can_damage = true
 
-@onready var player_sprite : AnimationPlayer = $student/AnimationPlayer
-@onready var player_node = $student
+@onready var player_sprite : AnimationPlayer = $Napat/AnimationPlayer
+@onready var player_node = $Napat
 @onready var bullet_marker = $BulletMarker
 @onready var particle_trails = $ParticleTrails
 @onready var death_particles = $DeathParticles
@@ -102,19 +102,19 @@ func player_animations():
 	if is_on_floor():
 		if abs(velocity.x) > 0:
 			particle_trails.emitting = true
-			player_sprite.current_animation = "Walk"
+			player_sprite.current_animation = "walk"
 		else:
-			player_sprite.current_animation = "Idle"
+			player_sprite.current_animation = "idle"
 	else:
-		player_sprite.current_animation = "Jump"
+		player_sprite.current_animation = "jump"
 
 
 # Flip player sprite based on X velocity
 func flip_player():
 	if velocity.x < 0: 
-		player_node.scale.x = -1
+		player_node.scale.x = -abs(player_node.scale.x)
 	elif velocity.x > 0:
-		player_node.scale.x = 1
+		player_node.scale.x = abs(player_node.scale.x)
 
 # Tween Animations
 func death_tween():
@@ -153,20 +153,38 @@ func damage_tween():
 	can_damage = true
 # --------- SIGNALS ---------- #
 
-# Reset the player's position to the current level spawn point if collided with any trap
 func _on_collision_body_entered(body):
+	# 1. ถ้าระยะเวลาอมตะยังทำงานอยู่ ให้ข้ามไปเลย
+	if !can_damage: 
+		return
+	
+	# 2. เมื่อชนกับดัก (Trap)
 	if body.is_in_group("Traps"):
-		hit_trap.emit()
-	if !can_damage : return
-	if body.is_in_group("Enemy"):
-		var dx = body.position.x - position.x
-		velocity.y = -400
-		if dx > 0:
-			velocity.x = -300
-		else:
-			velocity.x = 300					
+		apply_knockback(body.position.x)
+		damage_tween()
+		
+		# 👇 --- โค้ดลดเลือด 20 --- 👇
+		# หมายเหตุ: ให้คุณเปลี่ยนคำว่า "hp" เป็นชื่อตัวแปรเลือดที่คุณตั้งไว้ใน GameManager
+		GameManager.hp -= 20
+		
+		# เช็คว่าถ้าเลือดหมด (0) ค่อยสั่งให้เสียหัวใจและตาย
+		if GameManager.hp <= 0:
+			hit_trap.emit()
+			
+	# 3. เมื่อชนศัตรู (Enemy)
+	elif body.is_in_group("Enemy"):
+		apply_knockback(body.position.x)
 		damage_tween()
 		hit_enemy.emit()
+
+# ฟังก์ชันจัดการแรงกระเด็น
+func apply_knockback(attacker_x: float):
+	var dx = attacker_x - position.x
+	velocity.y = -400
+	if dx > 0:
+		velocity.x = -300
+	else:
+		velocity.x = 300
 
 func handle_shooting():
 	if Input.is_action_just_pressed("Shoot") and movement_enabled and shoot_cooldown_timer <= 0:
@@ -176,7 +194,7 @@ func shoot():
 	if bullet_scene == null:
 		return
 	is_attacking = true
-	player_sprite.play("Attack")
+	player_sprite.play("punch")
 	var bullet = bullet_scene.instantiate()
 	bullet.global_position = bullet_marker.global_position
 	var angle = deg_to_rad(randf_range(0, 20))
@@ -187,6 +205,5 @@ func shoot():
 	shoot_cooldown_timer = shoot_cooldown_time
 
 func _on_animation_finished(anim_name: String) -> void:
-	if anim_name == "Attack":
+	if anim_name == "punch":
 		is_attacking = false
-	

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://u0xva2fkdh8x"]
+
+[ext_resource type="Script" uid="uid://tc7w0cgy1wvq" path="res://Scenes/Prefabs/speed_item.gd" id="1_wchvt"]
+[ext_resource type="Texture2D" uid="uid://buud8buce5w8u" path="res://Assets/Spritesheet/30.png" id="2_wchvt"]
+[ext_resource type="Texture2D" uid="uid://621as0fwjhum" path="res://Assets/Textures/star_07.png" id="3_la18y"]
+
+[sub_resource type="Curve" id="Curve_yh7uo"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.494709, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_kkhmu"]
+offsets = PackedFloat32Array(0.625, 1)
+colors = PackedColorArray(0.914063, 0.734375, 0, 1, 1, 1, 1, 0)
+
+[node name="speed_item" type="Area2D" unique_id=251510796]
+collision_mask = 3
+script = ExtResource("1_wchvt")
+
+[node name="SpeedSprite" type="Sprite2D" parent="." unique_id=1955605895]
+position = Vector2(-1.9999998, -1)
+scale = Vector2(0.08290155, 0.063778125)
+texture = ExtResource("2_wchvt")
+
+[node name="SpeedSparkles" type="CPUParticles2D" parent="." unique_id=1908445367]
+amount = 10
+texture = ExtResource("3_la18y")
+lifetime = 2.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 80.0
+damping_min = 0.5
+damping_max = 0.5
+scale_amount_min = 0.04
+scale_amount_max = 0.1
+scale_amount_curve = SubResource("Curve_yh7uo")
+color_ramp = SubResource("Gradient_kkhmu")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=463047178]
+position = Vector2(1.9663467, 0)
+scale = Vector2(0.72089255, 0.9191176)
+polygon = PackedVector2Array(-4.114825, -16.32, -2.7276556, -1.0879999, -11.050671, 5.4399996, -12, 13.700001, -12, 15.799999, -2.1000004, 17, 12.099998, 14, 15.305544, 10.879999, 13.918375, -1.0879999, 11.144037, -8.7039995, 9, -15, 9, -17, 0.046682835, -18.495998)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

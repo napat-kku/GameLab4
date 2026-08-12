@@ -1,12 +1,132 @@
-[gd_scene format=3 uid="uid://towe6jtciome"]
+[gd_scene format=4 uid="uid://bffmbdeogj3wo"]
 
 [ext_resource type="PackedScene" uid="uid://bjntpxb1c8jxn" path="res://Scenes/Levels/base_level.tscn" id="1_8r7r2"]
-[ext_resource type="PackedScene" uid="uid://b46lxwc5r3dy4" path="res://Scenes/Levels/game_win.tscn" id="2_dcfph"]
+[ext_resource type="PackedScene" uid="uid://darrnnrsriosd" path="res://Scenes/Levels/level_04.tscn" id="2_ifgmf"]
+[ext_resource type="TileSet" uid="uid://bvk6vx5i1riqd" path="res://Scenes/Prefabs/ground_tile_set.tres" id="3_seoo4"]
+[ext_resource type="PackedScene" uid="uid://br7lrxr31c7uv" path="res://Scenes/Prefabs/spike_trap.tscn" id="4_seoo4"]
+[ext_resource type="PackedScene" uid="uid://u0xva2fkdh8x" path="res://Scenes/Prefabs/speed_item.tscn" id="5_y6snv"]
+[ext_resource type="PackedScene" uid="uid://bp4l1nlnh8oq1" path="res://Scenes/Prefabs/trap_2.tscn" id="6_xtkfo"]
+[ext_resource type="PackedScene" uid="uid://bfmh3fm2de78o" path="res://Scenes/Prefabs/coin.tscn" id="8_uak2l"]
+[ext_resource type="PackedScene" uid="uid://ek7hxkqp2wff" path="res://Scenes/Actors/monster_slim.tscn" id="9_34g67"]
+[ext_resource type="PackedScene" uid="uid://b48s52q3f64kl" path="res://Scenes/Actors/monster_mushroom.tscn" id="10_5qict"]
+[ext_resource type="Texture2D" uid="uid://cqb6l6treffsw" path="res://Assets/Textures/background 2.png" id="11_ifgmf"]
+[ext_resource type="PackedScene" uid="uid://cb8e62red7kc0" path="res://Scenes/Prefabs/trap_1.tscn" id="11_lshqn"]
 
 [node name="BaseLevel" unique_id=1997201631 instance=ExtResource("1_8r7r2")]
 
 [node name="LevelFinishDoor" parent="." index="0" unique_id=1788542095]
-next_scene = ExtResource("2_dcfph")
+position = Vector2(3792, 465)
+next_scene = ExtResource("2_ifgmf")
 
-[node name="Label" parent="UserInterface" parent_id_path=PackedInt32Array(1799764374) index="1" unique_id=1103718868]
+[node name="Background1" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="0" unique_id=1072429833]
+metadata/_edit_lock_ = true
+
+[node name="Ground" type="TileMapLayer" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="1" unique_id=647673462]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAcAAAADAAAAAAABAAcAAAADAAAAAAACAAcAAAADAAAAAAD//wcAAAADAAAAAAD//wYAAAABAAAAAAAKAAcAAAABAAAAAAAJAAcAAAABAAAAAAAAAAYAAAABAAAAAAABAAYAAAABAAAAAAACAAYAAAABAAAAAAD+/wUAAAADAAAAAAD+/wYAAAADAAAAAAD+/wQAAAADAAAAAAD+/wMAAAADAAAAAAD+/wEAAAADAAAAAAAIAAcAAAABAAAAAAD+/wcAAAADAAAAAAD+/wIAAAADAAAAAAADAAYAAAABAAAAAAADAAcAAAADAAAAAAADAAgAAAADAAAAAAAKAAgAAAADAAAAAAAGAAkAAAABAAAAAAAFAAkAAAABAAAAAAAEAAkAAAABAAAAAAADAAkAAAADAAAAAAAHAAkAAAABAAAAAAAKAAkAAAADAAAAAAALAAkAAAABAAAAAAAMAAkAAAABAAAAAAANAAkAAAABAAAAAAAOAAkAAAABAAAAAAAPAAkAAAABAAAAAAAQAAkAAAABAAAAAAARAAkAAAABAAAAAAASAAkAAAABAAAAAAATAAkAAAABAAAAAAAUAAkAAAABAAAAAAAVAAkAAAABAAAAAAAWAAkAAAABAAAAAAAIAAgAAAADAAAAAAAIAAkAAAADAAAAAAAXAAkAAAABAAAAAAAYAAkAAAABAAAAAAAZAAkAAAABAAAAAAAaAAkAAAABAAAAAAAbAAkAAAABAAAAAAAcAAkAAAABAAAAAAAdAAkAAAABAAAAAAAeAAkAAAABAAAAAAAfAAkAAAABAAAAAAAgAAkAAAABAAAAAAAhAAkAAAABAAAAAAAiAAkAAAABAAAAAAAjAAkAAAABAAAAAAAkAAkAAAABAAAAAAAlAAkAAAABAAAAAAAmAAkAAAABAAAAAAAnAAkAAAABAAAAAAAoAAkAAAABAAAAAAApAAkAAAABAAAAAAAqAAkAAAADAAAAAAArAAkAAAADAAAAAAAsAAkAAAADAAAAAAAtAAkAAAADAAAAAAAuAAkAAAADAAAAAAAvAAkAAAADAAAAAAAtAAgAAAABAAAAAAAsAAgAAAABAAAAAAArAAgAAAABAAAAAAAqAAgAAAABAAAAAAAuAAgAAAADAAAAAAAvAAgAAAADAAAAAAAuAAcAAAABAAAAAAAvAAcAAAABAAAAAAAwAAcAAAADAAAAAAAwAAgAAAADAAAAAAAwAAkAAAADAAAAAAAxAAcAAAADAAAAAAAxAAgAAAADAAAAAAAxAAkAAAADAAAAAAAxAAYAAAABAAAAAAAyAAgAAAADAAAAAAAyAAkAAAADAAAAAAAyAAYAAAABAAAAAAAyAAcAAAADAAAAAAAwAAYAAAABAAAAAAAzAAkAAAABAAAAAAA0AAkAAAABAAAAAAA1AAkAAAABAAAAAAA2AAkAAAABAAAAAAA3AAkAAAABAAAAAAA4AAkAAAABAAAAAAA5AAkAAAADAAAAAAA6AAkAAAADAAAAAAA7AAkAAAADAAAAAAA5AAgAAAABAAAAAAA6AAgAAAABAAAAAAA7AAgAAAABAAAAAAA8AAkAAAADAAAAAAA9AAkAAAADAAAAAAA+AAkAAAADAAAAAAA9AAgAAAADAAAAAAA9AAcAAAADAAAAAAA9AAYAAAADAAAAAAA9AAUAAAADAAAAAAA9AAQAAAADAAAAAAA9AAMAAAADAAAAAAA9AAIAAAADAAAAAAA8AAIAAAADAAAAAAA8AAMAAAADAAAAAAA8AAQAAAADAAAAAAA8AAUAAAADAAAAAAA8AAYAAAADAAAAAAA8AAcAAAADAAAAAAA8AAgAAAADAAAAAAA+AAgAAAADAAAAAAA+AAcAAAADAAAAAAA+AAYAAAADAAAAAAA+AAUAAAADAAAAAAA+AAQAAAADAAAAAAA+AAMAAAADAAAAAAA+AAIAAAADAAAAAAA+AAEAAAADAAAAAAA9AAEAAAADAAAAAAA8AAEAAAADAAAAAAA=")
+tile_set = ExtResource("3_seoo4")
+
+[node name="Background2" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="2" unique_id=1070008654]
+metadata/_edit_lock_ = true
+
+[node name="SpikeTrap" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="3" unique_id=1181447162 instance=ExtResource("4_seoo4")]
+position = Vector2(288, 560)
+
+[node name="SpikeTrap2" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="4" unique_id=1446187933 instance=ExtResource("4_seoo4")]
+position = Vector2(354, 561)
+
+[node name="SpikeTrap3" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="5" unique_id=1329486176 instance=ExtResource("4_seoo4")]
+position = Vector2(417, 560)
+
+[node name="speed_item" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="6" unique_id=251510796 instance=ExtResource("5_y6snv")]
+position = Vector2(1534, 419)
+
+[node name="Trap2" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="7" unique_id=1894763376 instance=ExtResource("6_xtkfo")]
+position = Vector2(929, 369)
+
+[node name="Trap3" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="8" unique_id=1775169801 instance=ExtResource("6_xtkfo")]
+position = Vector2(1051, 367)
+rotation = -0.87266463
+
+[node name="Trap4" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="9" unique_id=1165561938 instance=ExtResource("6_xtkfo")]
+position = Vector2(1183, 367)
+rotation = -1.7453293
+
+[node name="Trap5" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="10" unique_id=1966798215 instance=ExtResource("6_xtkfo")]
+position = Vector2(1308, 368)
+rotation = -2.6179938
+
+[node name="SpikeTrap4" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="11" unique_id=478920099 instance=ExtResource("4_seoo4")]
+position = Vector2(479, 561)
+
+[node name="Trap6" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="12" unique_id=2053448200 instance=ExtResource("6_xtkfo")]
+position = Vector2(1755, 370)
+
+[node name="Trap7" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="13" unique_id=1246949557 instance=ExtResource("6_xtkfo")]
+position = Vector2(1888, 370)
+
+[node name="Trap8" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="14" unique_id=226386113 instance=ExtResource("6_xtkfo")]
+position = Vector2(2015, 371)
+
+[node name="Trap9" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="15" unique_id=2071094058 instance=ExtResource("6_xtkfo")]
+position = Vector2(2141, 371)
+
+[node name="Trap10" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="16" unique_id=1493085858 instance=ExtResource("6_xtkfo")]
+position = Vector2(2272, 373)
+
+[node name="Trap11" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="17" unique_id=1880027247 instance=ExtResource("6_xtkfo")]
+position = Vector2(2400, 375)
+
+[node name="SpikeTrap5" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="18" unique_id=1530709100 instance=ExtResource("4_seoo4")]
+position = Vector2(3297, 561)
+
+[node name="SpikeTrap6" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="19" unique_id=554958825 instance=ExtResource("4_seoo4")]
+position = Vector2(3360, 560)
+
+[node name="SpikeTrap7" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="20" unique_id=357741863 instance=ExtResource("4_seoo4")]
+position = Vector2(3426, 560)
+
+[node name="SpikeTrap8" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="21" unique_id=564856518 instance=ExtResource("4_seoo4")]
+position = Vector2(3617, 560)
+
+[node name="SpikeTrap9" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="22" unique_id=1394404544 instance=ExtResource("4_seoo4")]
+position = Vector2(3553, 560)
+
+[node name="Label" parent="UserInterface" parent_id_path=PackedInt32Array(1799764374) index="2" unique_id=1103718868]
+offset_left = -99.0
+offset_top = -39.5
+offset_right = 99.0
+offset_bottom = 39.5
+theme_override_colors/font_color = Color(0.5529412, 0.38431373, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 text = "Level 3"
+horizontal_alignment = 1
+
+[node name="Coin" parent="." index="8" unique_id=1987090010 instance=ExtResource("8_uak2l")]
+position = Vector2(2578, 516)
+
+[node name="Coin2" parent="." index="9" unique_id=275504415 instance=ExtResource("8_uak2l")]
+position = Vector2(2578, 452)
+
+[node name="Enemy" parent="." index="10" unique_id=600502477 instance=ExtResource("9_34g67")]
+position = Vector2(3171, 382)
+
+[node name="Enemy2" parent="." index="11" unique_id=1816949498 instance=ExtResource("10_5qict")]
+position = Vector2(2828, 511)
+
+[node name="Trap" parent="." index="12" unique_id=1930518021 instance=ExtResource("11_lshqn")]
+position = Vector2(1536, 546)
+
+[node name="Coin3" parent="." index="13" unique_id=1005852531 instance=ExtResource("8_uak2l")]
+position = Vector2(608, 398)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="14" unique_id=1617272846]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0" unique_id=1529316090]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" index="0" unique_id=268103844]
+scale = Vector2(2, 2)
+texture = ExtResource("11_ifgmf")
+centered = false

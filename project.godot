@@ -46,7 +46,7 @@ project/assembly_name="2D-Platformer-Starter"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/ai_autonomous_agent/plugin.cfg")
 
 [global_group]
 
@@ -88,3 +88,10 @@ Shoot={
 2d_physics/layer_2="player"
 2d_physics/layer_3="enemy"
 2d_physics/layer_4="item"
+
+[plugins]
+
+ai_assistant_hub/llm_api="openrouter_api"
+ai_assistant_hub/preferences/thinking_target=0
+ai_assistant_hub/preferences/skip_greeting=false
+ai_assistant_hub/preferences/always_scroll_to_bottom=false

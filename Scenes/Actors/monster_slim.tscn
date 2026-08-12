@@ -2,70 +2,56 @@
 
 [ext_resource type="PackedScene" uid="uid://d27bcsmx82vfa" path="res://Scenes/Actors/enemy.tscn" id="1_b7voo"]
 [ext_resource type="Script" uid="uid://bx5lotsye1r4s" path="res://Scenes/Actors/monster_small.gd" id="2_a8voy"]
-[ext_resource type="Texture2D" uid="uid://dv87lp4aq8wj3" path="res://Assets/Spritesheet/Slime1_Walk_without_shadow.png" id="4_l5hy0"]
+[ext_resource type="Texture2D" uid="uid://blw2md110sbs4" path="res://Scenes/Sprites/Owlet_Monster_Walk_6.png" id="3_5bseq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ynp2i"]
-atlas = ExtResource("4_l5hy0")
-region = Rect2(0, 127, 64, 42)
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7voo"]
+atlas = ExtResource("3_5bseq")
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wil0m"]
-atlas = ExtResource("4_l5hy0")
-region = Rect2(64, 127, 64, 42)
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8voy"]
+atlas = ExtResource("3_5bseq")
+region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_225wo"]
-atlas = ExtResource("4_l5hy0")
-region = Rect2(128, 127, 64, 42)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngoay"]
+atlas = ExtResource("3_5bseq")
+region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q0esp"]
-atlas = ExtResource("4_l5hy0")
-region = Rect2(192, 127, 64, 42)
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5hy0"]
+atlas = ExtResource("3_5bseq")
+region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3umna"]
-atlas = ExtResource("4_l5hy0")
-region = Rect2(256, 127, 64, 42)
+[sub_resource type="AtlasTexture" id="AtlasTexture_gm5xx"]
+atlas = ExtResource("3_5bseq")
+region = Rect2(128, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3fnnt"]
-atlas = ExtResource("4_l5hy0")
-region = Rect2(320, 127, 64, 42)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_40jp4"]
-atlas = ExtResource("4_l5hy0")
-region = Rect2(384, 127, 64, 42)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8m1sm"]
-atlas = ExtResource("4_l5hy0")
-region = Rect2(448, 127, 64, 42)
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7xs7"]
+atlas = ExtResource("3_5bseq")
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l7ctk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ynp2i")
+"texture": SubResource("AtlasTexture_b7voo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wil0m")
+"texture": SubResource("AtlasTexture_a8voy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_225wo")
+"texture": SubResource("AtlasTexture_ngoay")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q0esp")
+"texture": SubResource("AtlasTexture_l5hy0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3umna")
+"texture": SubResource("AtlasTexture_gm5xx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3fnnt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_40jp4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8m1sm")
+"texture": SubResource("AtlasTexture_a7xs7")
 }],
 "loop": 1,
-"name": &"slim",
-"speed": 10.0
+"name": &"white",
+"speed": 5.0
 }]
 
 [node name="Enemy" unique_id=600502477 instance=ExtResource("1_b7voo")]
@@ -73,20 +59,22 @@ script = ExtResource("2_a8voy")
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=587424215]
 position = Vector2(0, -17)
-scale = Vector2(1, 0.8)
+scale = Vector2(0.9, 0.9)
 
 [node name="CollisionShape2D2" parent="HitArea" parent_id_path=PackedInt32Array(1115411835) index="0" unique_id=2008793250]
 position = Vector2(0, -17)
-scale = Vector2(1, 0.8)
+scale = Vector2(0.9, 0.9)
 
 [node name="Sprite" parent="." index="3" unique_id=1445111960]
 position = Vector2(0, -1)
 
 [node name="AnimateSprite" type="AnimatedSprite2D" parent="Sprite" index="0" unique_id=87960724]
-position = Vector2(0, -37)
+position = Vector2(0, -31)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_l7ctk")
-animation = &"slim"
+animation = &"white"
+flip_h = true
+metadata/_edit_lock_ = true
 
 [node name="Ray" parent="Sprite" index="1" unique_id=1415425330]
 visible = false

@@ -1,25 +1,107 @@
-[gd_scene format=3 uid="uid://cppg5yoxwv0dy"]
+[gd_scene format=4 uid="uid://cxd4hkdu4xd76"]
 
 [ext_resource type="PackedScene" uid="uid://bjntpxb1c8jxn" path="res://Scenes/Levels/base_level.tscn" id="1_3fxa7"]
-[ext_resource type="Texture2D" uid="uid://dkc8rdq3j7ppf" path="res://Assets/BG/mountainA.png" id="2_2e1f7"]
-[ext_resource type="PackedScene" uid="uid://towe6jtciome" path="res://Scenes/Levels/level_03.tscn" id="2_q8k1b"]
+[ext_resource type="PackedScene" uid="uid://bffmbdeogj3wo" path="res://Scenes/Levels/level_03.tscn" id="2_2uk4d"]
+[ext_resource type="TileSet" uid="uid://bvk6vx5i1riqd" path="res://Scenes/Prefabs/ground_tile_set.tres" id="3_51x33"]
+[ext_resource type="PackedScene" uid="uid://u0xva2fkdh8x" path="res://Scenes/Prefabs/speed_item.tscn" id="4_51x33"]
+[ext_resource type="Theme" uid="uid://d3eng5cvycmjf" path="res://Scenes/Prefabs/theme.tres" id="4_f8isr"]
+[ext_resource type="PackedScene" uid="uid://br7lrxr31c7uv" path="res://Scenes/Prefabs/spike_trap.tscn" id="5_2uk4d"]
+[ext_resource type="PackedScene" uid="uid://ek7hxkqp2wff" path="res://Scenes/Actors/monster_slim.tscn" id="7_fwrqu"]
+[ext_resource type="PackedScene" uid="uid://dabag2r57aued" path="res://Scenes/Prefabs/heal_potion.tscn" id="7_g4e5w"]
+[ext_resource type="PackedScene" uid="uid://cb8e62red7kc0" path="res://Scenes/Prefabs/trap_1.tscn" id="8_g4e5w"]
+[ext_resource type="PackedScene" uid="uid://bfmh3fm2de78o" path="res://Scenes/Prefabs/coin.tscn" id="10_28b8s"]
+[ext_resource type="Texture2D" uid="uid://e0l8tjwhwudd" path="res://Assets/Textures/background 3.png" id="11_28b8s"]
 
 [node name="BaseLevel" unique_id=1997201631 instance=ExtResource("1_3fxa7")]
 
 [node name="LevelFinishDoor" parent="." index="0" unique_id=1788542095]
-position = Vector2(1118, 400)
-next_scene = ExtResource("2_q8k1b")
+position = Vector2(3444, -946)
+next_scene = ExtResource("2_2uk4d")
 
 [node name="Background1" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="0" unique_id=1072429833]
 metadata/_edit_lock_ = true
 
-[node name="Background2" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="1" unique_id=1070008654]
+[node name="Ground" type="TileMapLayer" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="1" unique_id=647673462]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAcAAAAGAAAAAAABAAcAAAAGAAAAAAACAAcAAAAGAAAAAAD//wcAAAAGAAAAAAD//wYAAAAGAAAAAAAAAAYAAAAGAAAAAAABAAYAAAAGAAAAAAACAAYAAAAGAAAAAAD+/wUAAAAGAAAAAAD+/wYAAAAGAAAAAAD+/wQAAAAGAAAAAAD+/wMAAAAGAAAAAAD+/wEAAAAGAAAAAAD+/wcAAAAGAAAAAAD+/wIAAAAGAAAAAAADAAYAAAAGAAAAAAADAAcAAAAGAAAAAAAEAAYAAAAGAAAAAAAFAAYAAAAGAAAAAAAGAAYAAAAGAAAAAAAHAAYAAAAGAAAAAAAIAAYAAAAGAAAAAAAJAAYAAAAGAAAAAAAKAAYAAAAGAAAAAAALAAYAAAAGAAAAAAAMAAYAAAAGAAAAAAADAAQAAAAGAAAAAAAEAAQAAAAGAAAAAAAFAAQAAAAGAAAAAAAGAAQAAAAGAAAAAAAHAAQAAAAGAAAAAAAIAAQAAAAGAAAAAAAIAAEAAAAGAAAAAAAJAAEAAAAGAAAAAAAKAAEAAAAGAAAAAAAOAP//AAAGAAAAAAAPAP//AAAGAAAAAAAQAP//AAAGAAAAAAATAP3/AAAGAAAAAAAUAP3/AAAGAAAAAAAVAP3/AAAGAAAAAAAZAPn/AAAGAAAAAAAaAPn/AAAGAAAAAAAbAPn/AAAGAAAAAAAcAPn/AAAGAAAAAAAdAPn/AAAGAAAAAAAEAAcAAAAGAAAAAAAFAAcAAAAGAAAAAAAGAAcAAAAGAAAAAAAHAAcAAAAGAAAAAAAIAAcAAAAGAAAAAAAJAAcAAAAGAAAAAAAKAAcAAAAGAAAAAAALAAcAAAAGAAAAAAAMAAcAAAAGAAAAAAAqAPL/AAAGAAAAAAArAPL/AAAGAAAAAAAsAPL/AAAGAAAAAAAtAPL/AAAGAAAAAAAuAPL/AAAGAAAAAAAvAPL/AAAGAAAAAAAwAPL/AAAGAAAAAAAgAPf/AAAGAAAAAAAhAPf/AAAGAAAAAAAiAPf/AAAGAAAAAAAjAPf/AAAGAAAAAAAkAPf/AAAGAAAAAAAlAPf/AAAGAAAAAAAmAPf/AAAGAAAAAAAnAPf/AAAGAAAAAAAqAPv/AAAGAAAAAAApAPv/AAAGAAAAAAAoAPv/AAAGAAAAAAAnAPv/AAAGAAAAAAAmAPv/AAAGAAAAAAAlAPv/AAAGAAAAAAArAPv/AAAGAAAAAAAxAPL/AAAGAAAAAAAyAPL/AAAGAAAAAAAzAPL/AAAGAAAAAAA0APL/AAAGAAAAAAA1APL/AAAGAAAAAAA2APL/AAAGAAAAAAA3APL/AAAGAAAAAAA4APL/AAAGAAAAAAA5APL/AAAGAAAAAAA5APP/AAAGAAAAAAA5APT/AAAGAAAAAAA5APX/AAAGAAAAAAA5APb/AAAGAAAAAAA5APf/AAAGAAAAAAA5APj/AAAGAAAAAAA5APn/AAAGAAAAAAA5APr/AAAGAAAAAAA5APv/AAAGAAAAAAA5APz/AAAGAAAAAAA4AP3/AAAGAAAAAAA4AP7/AAAGAAAAAAA4AP//AAAGAAAAAAA4AAAAAAAGAAAAAAA4AAEAAAAGAAAAAAA4AAIAAAAGAAAAAAA4AAMAAAAGAAAAAAA4AAQAAAAGAAAAAAA4AAUAAAAGAAAAAAA4AAYAAAAGAAAAAAA5AAQAAAAGAAAAAAA5AAMAAAAGAAAAAAA5AAIAAAAGAAAAAAA5AAEAAAAGAAAAAAA5AAAAAAAGAAAAAAA5AP//AAAGAAAAAAA5AP7/AAAGAAAAAAA5AP3/AAAGAAAAAAA4APf/AAAGAAAAAAA4APb/AAAGAAAAAAA4APX/AAAGAAAAAAA4APT/AAAGAAAAAAA4APP/AAAGAAAAAAA4APz/AAAGAAAAAAA4APv/AAAGAAAAAAA4APr/AAAGAAAAAAA4APn/AAAGAAAAAAA4APj/AAAGAAAAAAA5AAUAAAAGAAAAAAA5AAYAAAAGAAAAAAA4AAcAAAAGAAAAAAA5AAcAAAAGAAAAAAA5APH/AAAGAAAAAAA5APD/AAAGAAAAAAA5AO//AAAGAAAAAAA5AO7/AAAGAAAAAAA5AO3/AAAGAAAAAAA5AOz/AAAGAAAAAAA4AOz/AAAGAAAAAAA4AO3/AAAGAAAAAAA4AO7/AAAGAAAAAAA4AO//AAAGAAAAAAA4APD/AAAGAAAAAAA4APH/AAAGAAAAAAA4AOv/AAAGAAAAAAA4AOr/AAAGAAAAAAA4AOn/AAAGAAAAAAA4AOj/AAAGAAAAAAA4AOf/AAAGAAAAAAA4AOb/AAAGAAAAAAA5AOb/AAAGAAAAAAA5AOf/AAAGAAAAAAA5AOj/AAAGAAAAAAA5AOn/AAAGAAAAAAA5AOr/AAAGAAAAAAA5AOv/AAAGAAAAAAD+//7/AAAGAAAAAAD+////AAAGAAAAAAD+/wAAAAAGAAAAAAD9/wQAAAAGAAAAAAD9/wUAAAAGAAAAAAD9/wYAAAAGAAAAAAD9/wcAAAAGAAAAAAD+//3/AAAGAAAAAAD+//z/AAAGAAAAAAD+//v/AAAGAAAAAAD+//r/AAAGAAAAAAD+//n/AAAGAAAAAAD+//j/AAAGAAAAAAD+//f/AAAGAAAAAAD+//b/AAAGAAAAAAD+//X/AAAGAAAAAAD+//T/AAAGAAAAAAD+//P/AAAGAAAAAAD+//L/AAAGAAAAAAD+//H/AAAGAAAAAAD9//H/AAAGAAAAAAD9//L/AAAGAAAAAAD9//P/AAAGAAAAAAD9//T/AAAGAAAAAAD9//X/AAAGAAAAAAD9//b/AAAGAAAAAAD9//f/AAAGAAAAAAD9//j/AAAGAAAAAAD9//n/AAAGAAAAAAD9//r/AAAGAAAAAAD9//v/AAAGAAAAAAD9//z/AAAGAAAAAAD9//3/AAAGAAAAAAD9//7/AAAGAAAAAAD9////AAAGAAAAAAD9/wAAAAAGAAAAAAD9/wEAAAAGAAAAAAD9/wIAAAAGAAAAAAD9/wMAAAAGAAAAAAANAAYAAAAGAAAAAAAOAAYAAAAGAAAAAAAPAAYAAAAGAAAAAAAQAAYAAAAGAAAAAAARAAYAAAAGAAAAAAASAAYAAAAGAAAAAAATAAYAAAAGAAAAAAAUAAYAAAAGAAAAAAAVAAYAAAAGAAAAAAAWAAYAAAAGAAAAAAAXAAYAAAAGAAAAAAAYAAYAAAAGAAAAAAAZAAYAAAAGAAAAAAAaAAYAAAAGAAAAAAAbAAYAAAAGAAAAAAAcAAYAAAAGAAAAAAAdAAYAAAAGAAAAAAAeAAYAAAAGAAAAAAAfAAYAAAAGAAAAAAAgAAYAAAAGAAAAAAAhAAYAAAAGAAAAAAAiAAYAAAAGAAAAAAAjAAYAAAAGAAAAAAAkAAYAAAAGAAAAAAAlAAYAAAAGAAAAAAAmAAYAAAAGAAAAAAAnAAYAAAAGAAAAAAAoAAYAAAAGAAAAAAApAAYAAAAGAAAAAAAqAAYAAAAGAAAAAAArAAYAAAAGAAAAAAAsAAYAAAAGAAAAAAAtAAYAAAAGAAAAAAAuAAYAAAAGAAAAAAAvAAYAAAAGAAAAAAAwAAYAAAAGAAAAAAAxAAYAAAAGAAAAAAAyAAYAAAAGAAAAAAAzAAYAAAAGAAAAAAA0AAYAAAAGAAAAAAA1AAYAAAAGAAAAAAA2AAYAAAAGAAAAAAA3AAYAAAAGAAAAAAA3AAcAAAAGAAAAAAA2AAcAAAAGAAAAAAA1AAcAAAAGAAAAAAA0AAcAAAAGAAAAAAAzAAcAAAAGAAAAAAAyAAcAAAAGAAAAAAAxAAcAAAAGAAAAAAAwAAcAAAAGAAAAAAAvAAcAAAAGAAAAAAAuAAcAAAAGAAAAAAAtAAcAAAAGAAAAAAAsAAcAAAAGAAAAAAArAAcAAAAGAAAAAAAqAAcAAAAGAAAAAAApAAcAAAAGAAAAAAAoAAcAAAAGAAAAAAAnAAcAAAAGAAAAAAAmAAcAAAAGAAAAAAAlAAcAAAAGAAAAAAAkAAcAAAAGAAAAAAAjAAcAAAAGAAAAAAAiAAcAAAAGAAAAAAAhAAcAAAAGAAAAAAAgAAcAAAAGAAAAAAAfAAcAAAAGAAAAAAAeAAcAAAAGAAAAAAAdAAcAAAAGAAAAAAAcAAcAAAAGAAAAAAAbAAcAAAAGAAAAAAAaAAcAAAAGAAAAAAAZAAcAAAAGAAAAAAAYAAcAAAAGAAAAAAAXAAcAAAAGAAAAAAAWAAcAAAAGAAAAAAAVAAcAAAAGAAAAAAAUAAcAAAAGAAAAAAATAAcAAAAGAAAAAAASAAcAAAAGAAAAAAARAAcAAAAGAAAAAAAQAAcAAAAGAAAAAAAPAAcAAAAGAAAAAAAOAAcAAAAGAAAAAAANAAcAAAAGAAAAAAA=")
+tile_set = ExtResource("3_51x33")
+
+[node name="Background2" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="2" unique_id=1070008654]
 metadata/_edit_lock_ = true
 
-[node name="MountainA" type="Sprite2D" parent="Level/Background2" index="0" unique_id=1142107788]
-position = Vector2(270.25, 217.24998)
-scale = Vector2(2.1334267, 2.4474432)
-texture = ExtResource("2_2e1f7")
+[node name="speed_item" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="3" unique_id=251510796 instance=ExtResource("4_51x33")]
+position = Vector2(411, 186)
 
-[node name="Label" parent="UserInterface" parent_id_path=PackedInt32Array(1799764374) index="1" unique_id=1103718868]
+[node name="speed_item2" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="4" unique_id=1192338414 instance=ExtResource("4_51x33")]
+position = Vector2(1386, -292)
+
+[node name="speed_item3" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="5" unique_id=98462541 instance=ExtResource("4_51x33")]
+position = Vector2(1379, -237)
+
+[node name="speed_item4" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="6" unique_id=1945370275 instance=ExtResource("4_51x33")]
+position = Vector2(2533, -383)
+
+[node name="speed_item5" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="7" unique_id=1208002803 instance=ExtResource("4_51x33")]
+position = Vector2(2465, -383)
+
+[node name="speed_item6" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="8" unique_id=1022178554 instance=ExtResource("4_51x33")]
+position = Vector2(2595, -382)
+
+[node name="SpikeTrap" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="9" unique_id=1181447162 instance=ExtResource("5_2uk4d")]
+position = Vector2(608, 50)
+
+[node name="Label" parent="UserInterface" parent_id_path=PackedInt32Array(1799764374) index="2" unique_id=1103718868]
+offset_left = -99.0
+offset_top = -39.5
+offset_right = 99.0
+offset_bottom = 39.5
+theme_override_colors/font_color = Color(0.5529412, 0.38431373, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 text = "Level 2"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Text" parent_id_path=PackedInt32Array(416249055) index="0" unique_id=2000774536]
+offset_left = 91.0
+offset_top = 102.0
+offset_right = 433.0
+offset_bottom = 231.0
+theme = ExtResource("4_f8isr")
+text = "
+กระโดดขึ้น เพื่อเข้าประตู"
+
+[node name="Label4" type="Label" parent="Text" parent_id_path=PackedInt32Array(416249055) index="1" unique_id=973326516]
+offset_left = 1472.0
+offset_top = -189.0
+offset_right = 1814.0
+offset_bottom = -60.0
+theme = ExtResource("4_f8isr")
+text = "Jump!!"
+
+[node name="HealPotion" parent="Text" parent_id_path=PackedInt32Array(416249055) index="2" unique_id=242563240 instance=ExtResource("7_g4e5w")]
+position = Vector2(1769, -501)
+
+[node name="Enemy" parent="." index="8" unique_id=600502477 instance=ExtResource("7_fwrqu")]
+position = Vector2(986, -65)
+
+[node name="Trap" parent="." index="9" unique_id=1930518021 instance=ExtResource("8_g4e5w")]
+position = Vector2(2268, -611)
+
+[node name="Trap2" parent="." index="10" unique_id=866304394 instance=ExtResource("8_g4e5w")]
+position = Vector2(2340, -611)
+
+[node name="Coin" parent="." index="11" unique_id=1193191843 instance=ExtResource("10_28b8s")]
+position = Vector2(1773, -561)
+
+[node name="Coin2" parent="." index="12" unique_id=1669969820 instance=ExtResource("10_28b8s")]
+position = Vector2(2409, -381)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="13" unique_id=1501448961]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0" unique_id=1704296562]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" index="0" unique_id=885841519]
+scale = Vector2(2, 2)
+texture = ExtResource("11_28b8s")
+centered = false

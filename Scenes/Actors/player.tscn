@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://ba2umthd5ts2v" path="res://Scenes/Actors/player.gd" id="1_mqoqv"]
 [ext_resource type="PackedScene" uid="uid://c5y568p25r7rl" path="res://Scenes/Prefabs/bullet.tscn" id="2_4fuvf"]
 [ext_resource type="Texture2D" uid="uid://dxp77wq60c2rr" path="res://Assets/Textures/CloudTexture.png" id="3_6q7nd"]
-[ext_resource type="PackedScene" uid="uid://bvoon20abmdym" path="res://Scenes/Sprites/student.tscn" id="4_pdd2n"]
 [ext_resource type="Texture2D" uid="uid://dia1dp34sme5l" path="res://Assets/Spritesheet/light_w.png" id="4_wn7ci"]
+[ext_resource type="PackedScene" uid="uid://d3p6l8pfu7c22" path="res://Scenes/Actors/napat.tscn" id="6_sfcrp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n4sts"]
-radius = 20.985498
-height = 69.99915
+radius = 18.985926
+height = 123.99915
 
 [sub_resource type="Curve" id="Curve_m2jh0"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.246032, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -19,7 +19,7 @@ offsets = PackedFloat32Array(0.25, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvbjh"]
-size = Vector2(43.99997, 123.99858)
+size = Vector2(38.028114, 122.000656)
 
 [node name="Player" type="CharacterBody2D" unique_id=2106209264 groups=["Player"]]
 rotation = 0.00042652956
@@ -28,7 +28,7 @@ script = ExtResource("1_mqoqv")
 bullet_scene = ExtResource("2_4fuvf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1840880435]
-position = Vector2(2.08165e-12, -33)
+position = Vector2(-0.012795903, -63)
 shape = SubResource("CapsuleShape2D_n4sts")
 
 [node name="ParticleTrails" type="CPUParticles2D" parent="." unique_id=1927645372]
@@ -74,8 +74,8 @@ position = Vector2(2.08165e-12, -48)
 collision_mask = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision" unique_id=69876643]
-position = Vector2(-2.0268738, -8.998505)
-scale = Vector2(1.0000011, 1.0000011)
+position = Vector2(0.95905745, -15.000866)
+scale = Vector2(1.0000018, 1.0000018)
 shape = SubResource("RectangleShape2D_tvbjh")
 
 [node name="LightW" type="Sprite2D" parent="." unique_id=900370792]
@@ -84,8 +84,8 @@ position = Vector2(-0.9982939, -40.999577)
 scale = Vector2(1.0000001, 1.0000001)
 texture = ExtResource("4_wn7ci")
 
-[node name="student" parent="." unique_id=1717188345 instance=ExtResource("4_pdd2n")]
-position = Vector2(-0.9982939, 4.0004263)
+[node name="Napat" parent="." unique_id=259426576 instance=ExtResource("6_sfcrp")]
+scale = Vector2(0.13, 0.13)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1467812523]
 limit_smoothed = true
@@ -98,6 +98,6 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="BulletMarker" type="Marker2D" parent="." unique_id=511055809]
-position = Vector2(28.983788, -38.012367)
+position = Vector2(24.96673, -78.010666)
 
 [connection signal="body_entered" from="Collision" to="." method="_on_collision_body_entered"]

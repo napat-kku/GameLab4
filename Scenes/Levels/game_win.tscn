@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://d3eng5cvycmjf" path="res://Scenes/Prefabs/theme.tres" id="1_5l1gm"]
 [ext_resource type="PackedScene" uid="uid://puc4l62gx6et" path="res://Scenes/Prefabs/button_exit.tscn" id="2_81byk"]
+[ext_resource type="Texture2D" uid="uid://crfak03q0eeqi" path="res://Assets/Textures/win.png" id="3_5l1gm"]
 
 [node name="GameOver" type="Node2D" unique_id=826370530]
 
@@ -33,3 +34,13 @@ offset_right = 723.0
 offset_bottom = 413.0
 shortcut = null
 text = "Play Again"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1141309756]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1121824031]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1595089490]
+scale = Vector2(2, 2)
+texture = ExtResource("3_5l1gm")
+centered = false
