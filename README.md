@@ -3,6 +3,11 @@
 ## Game Story 
 - มีเด็กชายกางเกงขาสั้น หลุดเข้าไปในโลกที่มีแต่ Monsters และกับดัก เขาต้องผ่านเข้าประตูไปเรื่อยๆ เพื่อหาทางรอดชีวิต
 
+## Link Clip Demo VDO
+
+## Link Play Game
+
+## Preview
 <img src="docs/demo1.png" width="450">
 <img src="docs/demo2.png" width="450">
 
