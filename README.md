@@ -1,3 +1,8 @@
+ชื่อ นายณภัตร ช้อยกิ่ง รหัสนักศึกษา 663380262-3
+
+<img src="docs/demo1.jpg" width="300">
+<img src="docs/demo2.jpg" width="300">
+
 # 2D Platformer Starter Kit
 
 This starter kit provides all the essential mechanics needed to build a complete 2D platformer game in Godot 4.7. It is designed as a hands-on learning resource for students taking the **Computer Game Development** course at the **College of Computing, Khon Kaen University**.
