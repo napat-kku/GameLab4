@@ -4,8 +4,9 @@
 - มีเด็กชายกางเกงขาสั้น หลุดเข้าไปในโลกที่มีแต่ Monsters และกับดัก เขาต้องผ่านเข้าประตูไปเรื่อยๆ เพื่อหาทางรอดชีวิต
 
 ## Link Clip Demo VDO
-
+- https://drive.google.com/file/d/11Rt4NG_v0n8g9EH0kcERvZah8GFB7PF5/view?usp=drive_link
 ## Link Play Game
+- https://napat-kku.github.io/GameLab4/
 
 ## Preview
 <img src="docs/demo1.png" width="450">
